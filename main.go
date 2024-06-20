@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	"\electronic-struct\electronic"
+
+	"github.com/mihailprokin/electronic-struct/electronic"
 )
 
 func main() {
