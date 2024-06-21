@@ -3,10 +3,11 @@ package main
 import (
 	"fmt"
 
-	"github.com/mihailprokin/electronic-struct/electronic"
+	"electronic/electronic"
 )
 
 func main() {
+	// Создаем новый applePhone
 	applePhone := electronic.ApplePhone{
 		Brand: "Apple",
 		Model: "IPhone 15",
@@ -14,33 +15,40 @@ func main() {
 	}
 
 	fmt.Println("Apple Phone:")
-	fmt.Println("Brand: ", applePhone.Brand())
-	fmt.Println("Model: ", applePhone.Model())
-	fmt.Println("Type: ", applePhone.Type())
-	fmt.Println("OS: ", applePhone.OS())
+	fmt.Println("Brand:", applePhone.Brand)
+	fmt.Println("Model:", applePhone.Model)
+	fmt.Println("Type:", applePhone.Type())
+	fmt.Println("OS:", applePhone.OS)
+
+	fmt.Println("----------------------------------------------------------------")
+
+	// Создаем новый androidPhone
+	androidPhone := electronic.AndroidPhone{
+		Brand: "Samsung",
+		Model: "Galaxy S20",
+		OS:    "Android",
+	}
+
+	fmt.Println("Android Phone:")
+	fmt.Println("Brand:", androidPhone.Brand)
+	fmt.Println("Model:", androidPhone.Model)
+	fmt.Println("Type:", androidPhone.Type())
+	fmt.Println("OS:", androidPhone.OS)
+
+	fmt.Println("----------------------------------------------------------------")
+
+	// Создаем новый radioPhone
+	radioPhone := electronic.RadioPhone{
+		Brand:        "Panasonic",
+		Model:        "KX-UT133",
+		ButtonsCount: 24,
+	}
+
+	fmt.Println("Radio Phone:")
+	fmt.Println("Brand:", radioPhone.Brand)
+	fmt.Println("Model:", radioPhone.Model)
+	fmt.Println("Type:", radioPhone.Type())
+	fmt.Println("ButtonsCount:", radioPhone.ButtonsCount)
+
+	fmt.Println("----------------------------------------------------------------")
 }
-
-// main.go
-// package main
-
-// import (
-//     "fmt"
-//     "your_project_path/electronic"
-// )
-
-// func main() {
-//     // Создаем новый applePhone
-//     myPhone := electronic.NewApplePhone("Apple", "iPhone 13", "iOS")
-
-//     // Используем методы интерфейсов
-//     fmt.Println("Brand:", myPhone.Brand())
-//     fmt.Println("Model:", myPhone.Model())
-//     fmt.Println("Type:", myPhone.Type())
-
-//     // Приводим к интерфейсу Smartphone, чтобы использовать метод OS
-//     if smartphone, ok := myPhone.(electronic.Smartphone); ok {
-//         fmt.Println("OS:", smartphone.OS())
-//     } else {
-//         fmt.Println("This phone is not a smartphone")
-//     }
-// }
