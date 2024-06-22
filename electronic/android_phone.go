@@ -1,24 +1,32 @@
 package electronic
 
 // Структура AndroidPhone, реализующая интерфейсы Phone и Smartphone
-type AndroidPhone struct {
-	Brand string
-	Model string
-	OS    string
+type androidPhone struct {
+	brand string
+	model string
+	os    string
 }
 
-func (an AndroidPhone) GetBrand() string {
-	return an.Brand
+func NewAndroidPhone(brand, model, os string) *androidPhone {
+	return &androidPhone{
+		brand: brand,
+		model: model,
+		os:    os,
+	}
 }
 
-func (an AndroidPhone) GetModel() string {
-	return an.Model
+func (an *androidPhone) Brand() string {
+	return an.brand
 }
 
-func (an AndroidPhone) Type() string {
-	return "Smartphone"
+func (an *androidPhone) Model() string {
+	return an.model
 }
 
-func (an AndroidPhone) GetOS() string {
-	return an.OS
+func (an *androidPhone) Type() string {
+	return "smartphone"
+}
+
+func (an *androidPhone) OS() string {
+	return an.os
 }

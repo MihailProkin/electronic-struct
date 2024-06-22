@@ -1,24 +1,30 @@
 package electronic
 
 // Структура ApplePhone, реализующая интерфейсы Phone и Smartphone
-type ApplePhone struct {
-	Brand string
-	Model string
-	OS    string
+type applePhone struct {
+	model string
+	os    string
 }
 
-func (ap ApplePhone) GetBrand() string {
-	return ap.Brand
+func NewApplePhone(model, os string) *applePhone {
+	return &applePhone{
+		model: model,
+		os:    os,
+	}
 }
 
-func (ap ApplePhone) GetModel() string {
-	return ap.Model
+func (ap *applePhone) Brand() string {
+	return "Apple"
 }
 
-func (ap ApplePhone) Type() string {
-	return "Smartphone"
+func (ap *applePhone) Model() string {
+	return ap.model
 }
 
-func (ap ApplePhone) GetOS() string {
-	return ap.OS
+func (ap *applePhone) Type() string {
+	return "smartphone"
+}
+
+func (ap *applePhone) OS() string {
+	return ap.os
 }
